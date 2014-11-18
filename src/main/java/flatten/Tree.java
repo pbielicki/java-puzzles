@@ -17,6 +17,7 @@ public interface Tree<T> {
       this.t = t;
     }
     
+    @SuppressWarnings("unchecked")
     @Override
     public Either<T, Triple<Tree<T>>> get() {
       return Either.left(t);
@@ -34,6 +35,7 @@ public interface Tree<T> {
       this.branches = new Triple<Tree<T>>(left, middle, right);
     }
   
+    @SuppressWarnings("unchecked")
     @Override
     public Either<T, Triple<Tree<T>>> get() {
       return Either.right(branches);

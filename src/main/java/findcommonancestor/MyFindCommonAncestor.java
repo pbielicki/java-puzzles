@@ -17,7 +17,7 @@ public class MyFindCommonAncestor implements FindCommonAncestor {
       throw new IllegalArgumentException();
     }
     
-    if (commitHash1 == commitHash2 || commitHash1.equals(commitHash2)) {
+    if (commitHash1.equals(commitHash2)) {
       return commitHash1;
     }
     
@@ -43,14 +43,16 @@ public class MyFindCommonAncestor implements FindCommonAncestor {
   }
   
   /**
-   * Is this method needed?
+   * This method returns older of parents. If commit has only one parent, it will be returned.
+   * Is this method needed? Depends on the definition of the common ancestor.
    * 
    *     E-F
    *    /   \
    * A-B-C-D-G
    *         
    * What is a common ancestor for G and F? F or B?
-   * This method will return B.
+   * 
+   * With help of this method, the algorithm will return B.
    */
   String older(String[] commitHashes, 
       int idx,
