@@ -9,6 +9,7 @@ public class Either<A,B> {
   /**
    * Constructs a left-type Either
    */
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   public static <A> Either left(A a) {
     if (a == null) throw new IllegalArgumentException();
     return new Either(a, null);
@@ -17,6 +18,7 @@ public class Either<A,B> {
   /**
    * Constructs a right-type Either
    */
+  @SuppressWarnings({ "rawtypes", "unchecked" })
   public static <B> Either right(B b) {
     if (b == null) throw new IllegalArgumentException();
     return new Either(null, b);
