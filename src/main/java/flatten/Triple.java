@@ -9,7 +9,7 @@ public class Triple<V> {
 
   public Triple(V l, V m, V r) {
     this.l = l;
-        this.m = m;
+    this.m = m;
     this.r = r;
   }
 
@@ -17,12 +17,11 @@ public class Triple<V> {
     return l;
   }
 
-    public V middle() {
-        return m;
-    }
+  public V middle() {
+    return m;
+  }
 
   public V right() {
     return r;
   }
-  
 }
